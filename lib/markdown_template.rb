@@ -43,7 +43,7 @@ class MarkdownTemplate
   module VERSION
     MAJOR = 0
     MINOR = 0
-    TINY  = 1
+    TINY  = 2
     STRING = [MAJOR, MINOR, TINY].join('.')          
   end
 
@@ -66,6 +66,7 @@ class BlueCloth
   protected 
     
   def map_headings(text)
+    @heading_mapping ||= 0
     MAX_HEADING_DEPTH.downto(1) do |n|
       open = "<h#{n}>"
       close = "</h#{n}>"
