@@ -11,39 +11,33 @@ class MarkdownTemplate
   def self.map_headings_down_by(mapping)
     @@heading_mapping = mapping
   end
+  
+  def render(template, local_assigns) 
 
-  def render(template, assigns)
-    doc = BlueCloth::new(template)
+    assigns = @view.assigns.dup
+  
+    if content_for_layout = @view.instance_variable_get("@content_for_layout")
+      assigns['content_for_layout'] = content_for_layout
+    end
+    result = @view.instance_eval do
+		  assigns.each do |key,val|
+		    instance_variable_set "@#{key}", val
+	    end
+		  local_assigns.each do |key,val|
+	  		class << self; self; end.send(:define_method,key) { val }
+			end
+      ERB.new(template, nil, '-').result(binding)
+    end
+    
+    doc = BlueCloth::new(result)
     doc.heading_mapping = @@heading_mapping
     doc.to_html
   end 
-  
-  # todo
-  # use the following code to enable setting of inline ruby code in the markdown templates
-  #def render(template, assigns) 
-  #  # create an anonymous object and get its binding 
-  #  env = Object.new.send(:binding) 
-  #  bind = env.send(:binding) 
-  #  # Add in the instance variables from the view 
-  #  @view.assigns.each do |key, value| 
-  #    env.instance_variable_set("@#{key}", value) 
-  #  end 
-  #  # and local variables if we're a partial 
-  #  assigns.each do |key, value| 
-  #    eval("#{key} = #{value}", bind) 
-  #  end 
-  #  @view.controller.headers["Content-Type"] ||= 'text/plain' 
-  #  # evaluate each line and show the original alongside 
-  #  # its value 
-  #  template.split(/\n/).map do |line| 
-  #    line + " => " + eval(line, bind).to_s 
-  #  end.join("\n") 
-  #end 
 
   module VERSION
     MAJOR = 0
     MINOR = 0
-    TINY  = 2
+    TINY  = 3
     STRING = [MAJOR, MINOR, TINY].join('.')          
   end
 
