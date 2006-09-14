@@ -1,6 +1,6 @@
 require 'bluecloth'
 
-class MarkdownTemplate
+class MarkdownOnRails
   
   @@heading_mapping = 0
 
