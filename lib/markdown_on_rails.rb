@@ -2,6 +2,36 @@ require 'bluecloth'
 
 class MarkdownOnRails
   
+  class BlueCloth < BlueCloth
+
+    MAX_HEADING_DEPTH = 10
+
+    attr_accessor :heading_mapping
+
+    old_to_html = instance_method(:to_html)
+
+    define_method(:to_html) { |*args|
+      text = old_to_html.bind(self).call(*args)
+      map_headings(text)
+    }
+
+    protected 
+
+    def map_headings(text)
+      # puts "map_headings"
+      # puts "@heading_mapping: #{@heading_mapping}"
+      @heading_mapping ||= 0
+      MAX_HEADING_DEPTH.downto(1) do |n|
+        open = "<h#{n}>"
+        close = "</h#{n}>"
+        text.gsub! open, "<h#{(n + @heading_mapping).to_s}>"
+        text.gsub! close, "</h#{(n + @heading_mapping).to_s}>"
+      end
+      text
+    end
+
+  end
+  
   @@heading_mapping = 0
 
   def initialize(view)
@@ -36,7 +66,7 @@ class MarkdownOnRails
 
   module VERSION
     MAJOR = 0
-    MINOR = 1
+    MINOR = 2
     TINY  = 0
     STRING = [MAJOR, MINOR, TINY].join('.')          
   end
@@ -44,30 +74,4 @@ class MarkdownOnRails
 end
 
 
-class BlueCloth
-  
-  MAX_HEADING_DEPTH = 10
 
-  attr_accessor :heading_mapping
-  
-  old_to_html = instance_method(:to_html)
-
-  define_method(:to_html) { |*args|
-    text = old_to_html.bind(self).call(*args)
-    map_headings(text)
-  }
-  
-  protected 
-    
-  def map_headings(text)
-    @heading_mapping ||= 0
-    MAX_HEADING_DEPTH.downto(1) do |n|
-      open = "<h#{n}>"
-      close = "</h#{n}>"
-      text.gsub! open, "<h#{(n + @heading_mapping).to_s}>"
-      text.gsub! close, "</h#{(n + @heading_mapping).to_s}>"
-    end
-    text
-  end
-  
-end
