@@ -1,8 +1,8 @@
-require 'bluecloth'
+require 'rdiscount'
 
-class MarkdownOnRails
+class AnotherMarkdownOnRails
   
-  class BlueCloth < BlueCloth
+  class RDiscount < RDiscount
 
     MAX_HEADING_DEPTH = 10
 
@@ -59,7 +59,7 @@ class MarkdownOnRails
       ERB.new(template, nil, '-').result(binding)
     end
     
-    doc = BlueCloth::new(result)
+    doc = RDiscount::new(result)
     doc.heading_mapping = @@heading_mapping
     doc.to_html
   end 

@@ -9,24 +9,17 @@ rescue Exception
 end
 
 
-desc "Default Task"
+require 'rake'
+require 'rake/testtask'
+require 'rake/rdoctask'
+require 'rcov/rcovtask'
+
+desc 'Default: run unit tests.'
 task :default => :test
 
-# Test Tasks ---------------------------------------------------------
 
-desc "Run all tests"
-task :test => [:test_units]
-task :ta => [:test]
-
-task :tu => [:test_units]
-
-Rake::TestTask.new("test_units") do |t|
-  t.test_files = FileList['test/test*.rb']
-  t.verbose = false
+Rake::TestTask.new(:test) do |t|
+  t.libs << 'lib'
+  t.pattern = 'test/**/*_test.rb'
+  t.verbose = true
 end
-
-desc "Look for Debugging print lines"
-task :dbg do
-  FileList['**/*.rb'].egrep /\bDBG|\bbreakpoint\b/
-end
-
