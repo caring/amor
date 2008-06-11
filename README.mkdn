@@ -20,6 +20,9 @@ For other versions you can install by descompressing this [file][tgz] in your ve
 
 The usage of AMOR is very easy. The only thing that you need to do is create your view using markdown's syntax and use **.text** instead of **.html.erb**
 
+## Version
+
+The current version is **0.0.1** and AMOR is under development and shouldn't be used.
 
 ## Licence
 
