@@ -10,7 +10,7 @@ If you are using the Rails 2.1 you can use the **script/plugin**
 
 	ruby script/plugin install git://github.com/tapajos/amor.git
 	
-To others versions you can install descompressing this [file][tgz] in your vendor/plugins directory.
+For other versions you can install by descompressing this [file][tgz] in your vendor/plugins directory.
 
 ## DEPENDENCIES
 
