@@ -1,0 +1,31 @@
+# AMOR - Another Markdown On Rails
+
+## WHAT
+
+AMOR is a fork of the famous project [Markdown on Rails][mor] to use [Rdiscont][rd] instead of [BlueCloth][bc] and improve some test and documentation.
+
+## INSTALLING
+
+If you are using the Rails 2.1 you can use the **script/plugin**
+
+	ruby script/plugin install git://github.com/tapajos/amor.git
+	
+To others versions you can install descompressing this [file][tgz] in your vendor/plugins directory.
+
+## DEPENDENCIES
+
+1. [Rdiscont][rd]
+
+## USING
+
+The usage of AMOR is very easy. The only thing that you need to do is create your view using markdown's syntax and use **.text** instead of **.html.erb**
+
+## Licence
+
+Markdown on Rails is released under the MIT licence.
+
+
+[tgz]: http://github.com/tapajos/selenium_poetry/tarball/master
+[bc]: http://www.deveiate.org/projects/BlueCloth
+[rd]: http://github.com/rtomayko/rdiscount
+[mor]: http://blog.rubygreenblue.com/project/markdown_on_rails
