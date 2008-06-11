@@ -20,11 +20,25 @@ For other versions you can install by descompressing this [file][tgz] in your ve
 
 The usage of AMOR is very easy. The only thing that you need to do is create your view using markdown's syntax and use **.text** instead of **.html.erb**
 
+
 ## Licence
 
 Markdown on Rails is released under the MIT licence.
 
+## Authors
 
+[Marcos Tapajós][mt]  
+Celestino Gomes
+
+## Shameless advertisement
+
+This plugin is brought to you by [Improve It][ii].
+
+[![Improve It][logo]][ii]
+
+[mt]: http://www.improveit.com.br/en/company/tapajos
+[ii]:		http://www.improveit.com.br
+[logo]: 	http://www.improveit.com.br/images/logo/logo_improve_it_screen.gif "Improve It"
 [tgz]: http://github.com/tapajos/selenium_poetry/tarball/master
 [bc]: http://www.deveiate.org/projects/BlueCloth
 [rd]: http://github.com/rtomayko/rdiscount
