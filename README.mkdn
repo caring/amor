@@ -42,7 +42,7 @@ This plugin is brought to you by [Improve It][ii].
 [mt]: http://www.improveit.com.br/en/company/tapajos
 [ii]:		http://www.improveit.com.br
 [logo]: 	http://www.improveit.com.br/images/logo/logo_improve_it_screen.gif "Improve It"
-[tgz]: http://github.com/tapajos/selenium_poetry/tarball/master
+[tgz]: http://github.com/tapajos/amor/tarball/master
 [bc]: http://www.deveiate.org/projects/BlueCloth
 [rd]: http://github.com/rtomayko/rdiscount
 [mor]: http://blog.rubygreenblue.com/project/markdown_on_rails
