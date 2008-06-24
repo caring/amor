@@ -8,7 +8,6 @@ rescue Exception
   nil
 end
 
-
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
@@ -16,7 +15,6 @@ require 'rcov/rcovtask'
 
 desc 'Default: run unit tests.'
 task :default => :test
-
 
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'

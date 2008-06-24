@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'rdiscount'
 
 class AnotherMarkdownOnRails
@@ -43,7 +44,6 @@ class AnotherMarkdownOnRails
   end
   
   def render(template, local_assigns) 
-
     assigns = @view.assigns.dup
   
     if content_for_layout = @view.instance_variable_get("@content_for_layout")
@@ -70,8 +70,4 @@ class AnotherMarkdownOnRails
     TINY  = 1
     STRING = [MAJOR, MINOR, TINY].join('.')          
   end
-
 end
-
-
-

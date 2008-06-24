@@ -7,4 +7,3 @@ else
 end
 
 AnotherMarkdownOnRails::map_headings_down_by 0
-
