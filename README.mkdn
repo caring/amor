@@ -2,7 +2,7 @@
 
 ## WHAT
 
-AMOR is a fork of the famous project [Markdown on Rails][mor] to use [Rdiscont][rd] instead of [BlueCloth][bc] and improve some test and documentation.
+AMOR is Another Markdown on Rails using [Rdiscont][rd] instead of [BlueCloth][bc].
 
 ## INSTALLING
 
@@ -42,4 +42,3 @@ This plugin is brought to you by [Improve It][ii].
 [tgz]: http://github.com/tapajos/amor/tarball/master
 [bc]: http://www.deveiate.org/projects/BlueCloth
 [rd]: http://github.com/rtomayko/rdiscount
-[mor]: http://blog.rubygreenblue.com/project/markdown_on_rails
