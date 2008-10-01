@@ -1,0 +1,5 @@
+Apenas um **teste**. _Lalalala_
+
+<% @eu = "Tapa" %>
+
+<%= "Usando ruby eu quero dizer que eu sou o #{@eu}"%>

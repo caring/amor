@@ -6,15 +6,12 @@ AMOR is a fork of the famous project [Markdown on Rails][mor] to use [Rdiscont][
 
 ## INSTALLING
 
-If you are using the Rails 2.1 you can use the **script/plugin**
-
 	ruby script/plugin install git://github.com/tapajos/amor.git
-	
-For other versions you can install by descompressing this [file][tgz] in your vendor/plugins directory.
 
 ## DEPENDENCIES
 
-1. [Rdiscont][rd]
+1. Rails 2.1.1
+2. [Rdiscont][rd]
 
 ## USING
 
@@ -22,7 +19,7 @@ The usage of AMOR is very easy. The only thing that you need to do is create you
 
 ## Version
 
-The current version is **0.0.1** and AMOR is under development and shouldn't be used.
+The current version is **0.1.0**.
 
 ## Licence
 
