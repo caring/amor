@@ -1,23 +1,14 @@
-require 'rake/clean'
-require 'rake/testtask'
-require 'rake/rdoctask'
-begin
-  require 'rubygems'
-  require 'rake/gempackagetask'
-rescue Exception
-  nil
-end
-
 require 'rake'
-require 'rake/testtask'
+require 'rubygems'
 require 'rake/rdoctask'
-require 'rcov/rcovtask'
+require 'rake/testtask'
+require 'spec/rake/spectask'
 
-desc 'Default: run unit tests.'
-task :default => :test
+desc 'Default: run specs'
+task :default => [:spec]
 
-Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
-  t.pattern = 'test/**/*_test.rb'
-  t.verbose = true
+desc "Run all specs"
+Spec::Rake::SpecTask.new do |t|
+  t.spec_files = FileList['spec/**/*_spec.rb']
+  t.spec_opts = ['--options', 'spec/spec.opts']
 end
