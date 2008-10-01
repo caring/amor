@@ -11,9 +11,11 @@ module AnotherMarkdownOnRails
     def initialize(view)
       @view = view
     end
+    
     def compilable?
       false
     end
+    
     def self.map_headings_down_by(mapping)
       @@heading_mapping = mapping
     end
