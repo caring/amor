@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'rdiscount'
-require File.dirname(__FILE__) + '/template/rdiscount'
 
 module AnotherMarkdownOnRails
 
