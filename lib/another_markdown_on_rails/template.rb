@@ -3,7 +3,7 @@ require 'rdiscount'
 
 module AnotherMarkdownOnRails
 
-  class Template
+  class Template < ActionView::TemplateHandler
   
     @@heading_mapping = 0
 
@@ -19,8 +19,7 @@ module AnotherMarkdownOnRails
       @@heading_mapping = mapping
     end
   
-    def render template
-      local_assigns = template.locals
+    def render(template, local_assigns = {})
       assigns = @view.assigns.dup
   
       if content_for_layout = @view.instance_variable_get("@content_for_layout")
@@ -35,10 +34,9 @@ module AnotherMarkdownOnRails
           end
         ERB.new(template.source, nil, '-').result(binding)
       end
-    
       doc = RDiscount::new(result)
       doc.heading_mapping = @@heading_mapping
-      doc.to_html
+      return doc.to_html.to_s
     end 
 
   end
