@@ -15,7 +15,7 @@ AMOR is Another Markdown on Rails using [Rdiscont][rd] instead of [BlueCloth][bc
 
 ## USING
 
-The usage of AMOR is very easy. The only thing that you need to do is create your view using markdown's syntax and use **.text** instead of **.html.erb**
+The usage of AMOR is very easy. The only thing that you need to do is create your view using markdown's syntax and use **.md** instead of **.html.erb**
 
 ## Version
 
