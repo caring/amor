@@ -6,7 +6,7 @@ AMOR is Another Markdown on Rails using [Rdiscont][rd] instead of [BlueCloth][bc
 
 ## INSTALLING
 
-	ruby script/plugin install git://github.com/tapajos/amor.git
+	ruby script/plugin install git://github.com/caring/amor.git
 
 ## DEPENDENCIES
 
